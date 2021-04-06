@@ -11,35 +11,35 @@ import TabThreeScreen from '../screens/TabThreeScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
-
+//<BottomTab.Screen
+//    name="TabThree"
+//    component={TabThreeNavigator}
+//    options={{
+//        tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+//    }}
+///>
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+          initialRouteName="Login"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
+              name="Login"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Register"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
           />
-          <BottomTab.Screen
-              name="TabThree"
-              component={TabThreeNavigator}
-              options={{
-                  tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-              }}
-          />
+          
 
     </BottomTab.Navigator>
   );
@@ -61,7 +61,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: 'Login / Sign Up' }}
+        options={{ headerTitle: 'Register' }}
       />
     </TabOneStack.Navigator>
   );
@@ -75,22 +75,22 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
-      />
+        options={{ headerTitle: 'Login' }}
+          />
     </TabTwoStack.Navigator>
   );
 }
 
-const TabThreeStack = createStackNavigator<TabThreeParamList>();
+//const TabThreeStack = createStackNavigator<TabThreeParamList>();
 
-function TabThreeNavigator() {
-    return (
-        <TabThreeStack.Navigator>
-            <TabThreeStack.Screen
-                name="TabThreeScreen"
-                component={TabThreeScreen}
-                options={{ headerTitle: 'Test Eniorment' }}
-            />
-        </TabThreeStack.Navigator>
-    );
-}
+//function TabThreeNavigator() {
+//    return (
+//        <TabThreeStack.Navigator>
+//            <TabThreeStack.Screen
+//                name="TabThreeScreen"
+//                component={TabThreeScreen}
+//                options={{ headerTitle: 'Test Eniorment' }}
+//            />
+//        </TabThreeStack.Navigator>
+//    );
+//}
